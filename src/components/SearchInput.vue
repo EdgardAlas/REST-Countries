@@ -1,6 +1,6 @@
 <template>
   <div class="search-section__input-section">
-    <i class="fas fa-search search-section__icon" @click="searchButton"></i>
+    <i class="fas fa-search search-section__icon"></i>
     <input
       type="search"
       class="search-section__input"
@@ -18,17 +18,12 @@ export default {
   setup(_, { emit }) {
     const inputValue = ref("");
 
-    const searchButton = () => {
-      emit("inputValueClear", inputValue);
-    };
-
     watch(inputValue, (value, old) => {
       emit("inputValue", value);
     });
 
     return {
       inputValue,
-      searchButton,
     };
   },
 };

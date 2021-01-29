@@ -1,10 +1,7 @@
 <template class="container">
   <main>
     <SearchSection>
-      <SearchInput
-        @inputValue="searchValue"
-        @inputValueClear="searchClear"
-      ></SearchInput>
+      <SearchInput @inputValue="searchValue"></SearchInput>
       <div class="break"></div>
       <SelectCountry @changeValue="regionValue"></SelectCountry>
     </SearchSection>
@@ -50,10 +47,6 @@ export default {
       searchCountry.value = value;
     };
 
-    const searchClear = () => {
-      alert(3);
-    };
-
     watch(countries, (value, old) => {
       //detectar cambios
     });
@@ -76,7 +69,6 @@ export default {
       searchValue,
       countries,
       regionValue,
-      searchClear,
     };
   },
 };
