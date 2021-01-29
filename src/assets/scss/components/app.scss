@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    --bg: #{$very-light-gray};
+    --text-color: #{$very-dark-blue-text};
+    --input-color: #{$dark-gray};
+    --element-color: #{$white};
+    --invers: #{$dark-blue};
+    --theme-icon: '\f186';
+    --theme-text: 'Dark Mode';
+    --font-family: #{$font-family};
+
+    margin: 0;
+    background-color: var(--bg);
+    font-family: var(--font-family);
+    color: var(--text-color);
+
+
+    &.dark {
+        --bg: #{$very-dark-blue-bg};
+        --text-color: #{$white};
+        --input-color: #{$dark-gray};
+        --element-color: #{$dark-blue};
+        --invers: rgba(0, 0, 0, 0.8);
+        --theme-icon: '\f185';
+        --theme-text: 'Light Mode';
+    }
+
+}
+
+.link {
+    text-decoration: none;
+
+    &:visited {
+        color: inherit;
+    }
+}

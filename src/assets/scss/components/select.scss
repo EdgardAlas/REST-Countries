@@ -1,0 +1,86 @@
+.select {
+    max-width: 65%;
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: $border-radius;
+    position: relative;
+    background: var(--element-color);
+    user-select: none;
+    cursor: pointer;
+    box-shadow: $box-shadown;
+
+    &__value {
+        display: block;
+        width: 100%;
+        padding: 0.5rem 1rem;
+    }
+
+    &__list {
+        position: absolute;
+        top: 2.7rem;
+        left: 0;
+        list-style-type: none;
+        border-radius: $border-radius;
+        width: 100%;
+        background: var(--element-color);
+        transform: translateY(-500vmax);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        box-shadow: $box-shadown;
+        z-index: 1;
+    }
+
+    &__show {
+        padding: 0.5rem;
+        transition: background 0.3s ease;
+
+        &:hover {
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+            background-color: var(--text-color);
+            color: var(--element-color);
+        }
+    }
+
+    &__item {
+        padding: 0.5rem 1rem;
+        transition: background 0.3s ease;
+
+        &:hover {
+            background-color: var(--text-color);
+            color: var(--element-color);
+
+            &:first-child {
+                border-top-left-radius: $border-radius;
+                border-top-right-radius: $border-radius;
+            }
+
+            &:last-child {
+                border-bottom-right-radius: $border-radius;
+                border-bottom-left-radius: $border-radius;
+            }
+        }
+
+        &--active {
+            background-color: var(--text-color);
+            color: var(--element-color);
+
+            &:first-child {
+                border-top-left-radius: $border-radius;
+                border-top-right-radius: $border-radius;
+            }
+
+            &:last-child {
+                border-bottom-right-radius: $border-radius;
+                border-bottom-left-radius: $border-radius;
+            }
+
+        }
+    }
+
+    &--open &__list {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

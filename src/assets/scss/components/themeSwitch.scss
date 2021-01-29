@@ -1,0 +1,14 @@
+.switch {
+    color: var(--text-color);
+    font-family: $font-family;
+    font-size: 1rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:focus {
+        transform: scale(1.05);
+        outline: none;
+
+    }
+}
